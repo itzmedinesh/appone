@@ -21,6 +21,7 @@ public class ProductResource {
         this.products = new ArrayList<>();
         this.products.add(new Product("1", "prodone", "Product One"));
         this.products.add(new Product("2", "prodtwo", "Product Two"));
+        this.products.add(new Product("3", "prodthree", "Product Three"));
     }
 
     @GetMapping("/products")
