@@ -23,4 +23,13 @@ jobs:
         run: docker build -t itzmedinesh/appone .
       - name: Push image to docker hub
         run: docker push itzmedinesh/appone:latest
-
+  deploy:
+    needs: build
+    runs-on: [aws-ec2]
+    steps:
+      - name: Pull image from docker hub
+        run: docker pull itzmedinesh/appone:latest
+      - name: Delete container if exists
+        run: docker rm -f appone-container
+      - name: Run as container
+        run: docker run -d -p 8080:8080 --name appone-container itzmedinesh/appone
