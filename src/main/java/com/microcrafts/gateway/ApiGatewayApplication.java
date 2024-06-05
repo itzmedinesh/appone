@@ -12,9 +12,4 @@ public class ApiGatewayApplication {
 		SpringApplication.run(ApiGatewayApplication.class, args);
 	}
 
-	@Bean
-	public RouterFunction routeLocator(){
-
-	}
-
 }
