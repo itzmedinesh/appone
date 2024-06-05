@@ -20,7 +20,7 @@ jobs:
       - name: Docker Login
         run: docker login -u ${{secrets.DOCKHUB_UID}} -p ${{secrets.DOCKHUB_PWD}}
       - name: Build docker image
-        run: docker build --no-cache -t itzmedinesh/api-gateway .
+        run: docker build --no-cache=true -t itzmedinesh/api-gateway .
       - name: Push image to docker hub
         run: docker push itzmedinesh/api-gateway:latest
   deploy:
