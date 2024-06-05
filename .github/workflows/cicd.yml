@@ -31,5 +31,6 @@ jobs:
         run: docker pull itzmedinesh/api-gateway:latest
       - name: Delete container if exists
         run: docker rm -f api-gateway-container
+        run: docker rm -f appone-container
       - name: Run as container
-        run: docker run -d -p 8080:8080 --name appone-container itzmedinesh/api-gateway
+        run: docker run -d -p 8080:8080 --name api-gateway-container itzmedinesh/api-gateway
